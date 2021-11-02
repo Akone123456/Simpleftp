@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xzit.simpleftp.mapper.FileInfoMapper">
+
+  <insert id="saveFileInfo" parameterType="com.xzit.simpleftp.entity.FileInfo">
+      insert into ftp (id,size,type,originalfilename,createtime,filepath) values (#{id},#{size},#{type},#{originalfilename},#{createtime},#{filepath})
+
+  </insert>
+
+
+    <select id="getFileInfoById" resultType="com.xzit.simpleftp.entity.FileInfo">
+        select  * from ftp where id=#{id}
+    </select>
+</mapper>
